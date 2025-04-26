@@ -116,4 +116,12 @@ list(
 
 # decision theory ---------------------------------------------------------
 
+# type I error - alarm without a fire - false positive
+# type II error - fire without an alarm - false negative
 
+tibble(
+  decision = c('Accept H₀', 'Reject H₀'),
+  `H₀` = c('No error', 'Type I (FP)'),
+  `Hα` = c('Type II (FN)', 'No error')
+) |> 
+  print()
