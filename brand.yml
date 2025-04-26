@@ -1,0 +1,21 @@
+#-------------------------------------------------------------------------------
+# _brand.yml
+# sets the colour palette for any quarto documents
+#-------------------------------------------------------------------------------
+
+meta:
+  name: Jo Dudding
+  link: https://github.com/JoDudding
+
+defaults:
+  bootstrap:
+    defaults: 
+      link-decoration: underline
+      navbar-fg: "#fff"
+      
+typography:
+  fonts:
+    - family: Monserrat
+      source: google
+  #base: Monserrat
+  #headings: Monserrat      

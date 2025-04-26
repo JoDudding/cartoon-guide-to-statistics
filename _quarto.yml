@@ -1,0 +1,37 @@
+project:
+  title: "The Cartoon Guide to Statistics"
+  execute-dir: project
+  output-dir: outputs
+
+editor: visual
+
+format:
+  html:
+    theme:
+      - pulse
+      - assets/cartoon.scss
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    embed-resources: true
+    fig-align: left
+    fig-dpi: 150
+    fig-width: 4.667
+    fig-height: 3.30
+    fig-cap-location: margin
+    tbl-cap-location: margin
+    footnotes-hover: true
+    html-math-method: mathml    
+
+date-format: iso
+
+execute:
+  warning: false
+  #echo: false
+  error: false
+
+knitr:
+  opts_chunk:
+    dev: png
+    dev.args:
+      bg: transparent

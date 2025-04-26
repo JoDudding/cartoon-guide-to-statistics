@@ -68,56 +68,63 @@ summaryx <- function(data, var) {
 
 # colour palette
 
-plasma <- function(n = 9, begin = 0.1, end = 0.85, ...) {
+cartoon <- function(n = 9, begin = 0.1, end = 0.85, ...) {
 
   viridisLite::plasma(n = n, begin = begin, end = end, ...) 
 }  
 
-plasma_pal <- plasma(9) 
+cartoon_pal <- cartoon(9) 
 
-# show_col(plasma_pal)
+# show_col(cartoon_pal)
 
-scale_fill_plasma_d <- function(...) {
+scale_fill_cartoon_d <- function(...) {
   scale_fill_viridis_d(option = 'plasma', begin = 0.3, end = 0.8, ...)
 }
 
-scale_fill_plasma_c <- function(...) {
+scale_fill_cartoon_c <- function(...) {
   scale_fill_viridis_c(option = 'plasma', begin = 0.3, end = 0.8, ...)
 }
 
-scale_colour_plasma_d <- function(...) {
+scale_colour_cartoon_d <- function(...) {
   scale_colour_viridis_d(option = 'plasma', begin = 0.3, end = 0.8, ...)
 }
 
-scale_colour_plasma_c <- function(...) {
+scale_colour_cartoon_c <- function(...) {
   scale_colour_viridis_c(option = 'plasma', begin = 0.3, end = 0.8, ...)
 }
 
+purple_pal <- grDevices::colorRampPalette(c('#6800A8FF', '#E1CEFFFF'))
+
+#show_col(purple_pal(9))
+
+orange_pal <- grDevices::colorRampPalette(c('#502A00FF', '#F9973FFF', '#FFD6C1FF'))
+
+#show_col(orange_pal(9))
 
 # change default colours etc for geoms ------------------------------------
 
 base_size <- 8
 
-update_geom_defaults("col", list(fill = plasma_pal[3], colour = NA))
-update_geom_defaults("bar", list(fill = plasma_pal[3], colour = NA))
-update_geom_defaults("rect", list(fill = plasma_pal[3], colour = NA))
-update_geom_defaults("violin", list(fill = plasma_pal[3], colour = plasma_pal[2], 
+update_geom_defaults("col", list(fill = cartoon_pal[3], colour = NA))
+update_geom_defaults("bar", list(fill = cartoon_pal[3], colour = NA))
+update_geom_defaults("rect", list(fill = cartoon_pal[3], colour = NA))
+update_geom_defaults("violin", list(fill = cartoon_pal[3], colour = cartoon_pal[2], 
   alpha = 0.5))
-update_geom_defaults("boxplot", list(fill = plasma_pal[3], colour = plasma_pal[2], 
+update_geom_defaults("boxplot", list(fill = cartoon_pal[3], colour = cartoon_pal[2], 
   alpha = 0.5))
-update_geom_defaults("dotplot", list(fill = plasma_pal[3], colour = NA))
-update_geom_defaults("point", list(colour = plasma_pal[2]))
-update_geom_defaults("line", list(colour = plasma_pal[2]))
-update_geom_defaults("step", list(colour = plasma_pal[2]))
-update_geom_defaults("path", list(colour = plasma_pal[2]))
+update_geom_defaults("dotplot", list(fill = cartoon_pal[3], colour = NA))
+update_geom_defaults("point", list(colour = cartoon_pal[2]))
+update_geom_defaults("line", list(colour = cartoon_pal[2]))
+update_geom_defaults("step", list(colour = cartoon_pal[2]))
+update_geom_defaults("path", list(colour = cartoon_pal[2]))
 update_geom_defaults("text", list(lineheight = 0.85, 
   size = base_size / .pt * 0.9, family = "Montserrat"))
 update_geom_defaults("label", list(lineheight = 0.85, 
   size = base_size / .pt * 0.9, family = "Montserrat"))
-update_geom_defaults("vline", list(colour = plasma_pal[9], linetype = 3))
-update_geom_defaults("hline", list(colour = plasma_pal[9], linetype = 3))
-update_geom_defaults("abline", list(colour = plasma_pal[9], linetype = 3))
-update_geom_defaults("smooth", list(fill = plasma_pal[6], colour = plasma_pal[6], 
+update_geom_defaults("vline", list(colour = cartoon_pal[9], linetype = 3))
+update_geom_defaults("hline", list(colour = cartoon_pal[9], linetype = 3))
+update_geom_defaults("abline", list(colour = cartoon_pal[9], linetype = 3))
+update_geom_defaults("smooth", list(fill = cartoon_pal[6], colour = cartoon_pal[6], 
   alpha = 0.5))
 
 
@@ -161,12 +168,12 @@ theme_cartoon <- function(
         face = 'bold'
       ),
       
-      plot.background = element_rect(fill = NA, colour = NA),
+      #plot.background = element_rect(fill = NA, colour = NA),
       plot.title.position = "plot",
       plot.caption.position = "plot",
       plot.title = element_text(
         size = rel(1.15),
-        colour = plasma_pal[2],
+        colour = cartoon_pal[2],
         face = "bold",
         hjust = 0
       ),
