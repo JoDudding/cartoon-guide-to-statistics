@@ -1,7 +1,7 @@
 project:
   title: "The Cartoon Guide to Statistics"
   execute-dir: project
-  output-dir: outputs
+  #output-dir: outputs
 
 editor: visual
 
