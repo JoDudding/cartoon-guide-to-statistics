@@ -20,9 +20,15 @@ This repo has R code for the concepts in The Cartoon Guide to Statistics
 
 ## [Chapter 6 Sampling](scripts/chapter-06-sampling.r)
 
+✓
+
 ## [Chapter 7 Confidence intervals](scripts/chapter-07-confidence-intervals.r)
 
+✓
+
 ## [Chapter 8 Hypothesis testing](scripts/chapter-08-hypothesis-testing.r)
+
+✓
 
 ## [Chapter 9 Comparing two populations](scripts/chapter-09-comparing-two-populations.r)
 
