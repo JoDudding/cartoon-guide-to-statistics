@@ -40,3 +40,17 @@ list(
   tacks_68_ci = paste(percent(tacks_68_ci, 0.1), collapse = ' - ')
 ) |> 
   cli_dl()
+
+
+# sampling distribution of the mean ---------------------------------------
+
+# population mean mu μ
+# X bar is sum(x) / n
+
+# central limit theorem
+# as n increases X hat approaches normal with with mean μ and standard deviation σ / √n
+
+# t-distribution
+# t = X hat - μ / (s / √n)
+# where s = sample sd
+# t is is more spread out than Z but gets closer as n increases
