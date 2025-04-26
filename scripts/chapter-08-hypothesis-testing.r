@@ -118,10 +118,12 @@ list(
 
 # type I error - alarm without a fire - false positive
 # type II error - fire without an alarm - false negative
+# 1-α is the confidence that any alarms we hear are genuine TP / (TP + TN)
+# β is the power of the test - FN / (TN + FN)
 
 tibble(
   decision = c('Accept H₀', 'Reject H₀'),
-  `H₀` = c('No error', 'Type I (FP)'),
-  `Hα` = c('Type II (FN)', 'No error')
+  `H₀` = c('No error (TP)', 'Type I (FP)'),
+  `Hα` = c('Type II (FN)', 'No error (TN)')
 ) |> 
   print()
