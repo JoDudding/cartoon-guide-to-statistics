@@ -82,3 +82,38 @@ list(
 
 # small sample test for the population mean -------------------------------
 
+
+chameleon <- c(150, 400, 720, 500, 930)
+
+chameleon_pop_mean <- 1000
+
+chameleon_n <- length(chameleon)
+chameleon_mean <- mean(chameleon)
+chameleon_sd <- sd(chameleon)
+
+t_95_4df_low <- qt(((1 - 0.95)), chameleon_n - 1)
+
+chameleon_se <- chameleon_sd / sqrt(chameleon_n)
+chameleon_95_ci <- chameleon_mean + c(-t_95_4df, t_95_4df) * chameleon_se
+chameleon_95_error <- t_95_4df * chameleon_se
+
+chameleon_test_statistic <- (chameleon_mean - chameleon_pop_mean) / 
+  (chameleon_sd / sqrt(chameleon_n))
+
+chameleon_signif <- chameleon_test_statistic <= t_95_4df_low
+
+list(
+  chameleon_pop_mean = dollar(chameleon_pop_mean),
+  chameleon_n = comma(chameleon_n),
+  chameleon_mean = dollar(chameleon_mean, 0.1),
+  chameleon_sd = dollar(chameleon_sd, 0.1),
+  chameleon_test_statistic = comma(chameleon_test_statistic, 0.01),
+  t_95_4df_low = comma(t_95_4df_low, 0.01),
+  chameleon_signif = chameleon_signif
+) |> 
+  cli_dl()
+
+
+# decision theory ---------------------------------------------------------
+
+
