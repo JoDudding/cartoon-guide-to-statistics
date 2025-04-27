@@ -48,8 +48,10 @@ aspirin_event <- aspirin |>
   ) |>
   print()
 
+comma(pnorm(5.19, lower.tail = FALSE), 0.000000001)
+
 confidence_level <- 0.95
-direction <- "two.sided" # 'greater', 'less
+direction <- "greater" # 'two.sided', 'less
 
 aspirin_test <- prop.test(
   x = aspirin_event$event,

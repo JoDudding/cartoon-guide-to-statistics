@@ -19,7 +19,6 @@ jurors_panel_x <- 4
 
 jurors_panel_pct <- jurors_panel_x / jurors_panel_n
 
-# TODO check this
 jurors_prob <- pbinom(jurors_panel_x, jurors_panel_n, jurors_pop_pct)
 jurors_signif <- jurors_prob <= p_val_alpha
 
