@@ -6,6 +6,9 @@
 
 ![](assets/book-cover.jpg)
 
+[Link to the corrections
+page](https://sites.temple.edu/woollcottsmith/files/2020/10/corrections-3.pdf)
+
 This repo has R code for the concepts in The Cartoon Guide to Statistics
 
 ## [Chapter 1 What is statistics?](scripts/chapter-01-what-is-statistics.r)
