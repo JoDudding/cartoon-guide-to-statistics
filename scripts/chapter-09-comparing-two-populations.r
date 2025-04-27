@@ -63,13 +63,15 @@ aspirin_test <- prop.test(
   broom::tidy() |>
   rename(p_value = p.value) |>
   mutate(
+    difference = percent(estimate1 - estimate2, 0.01),
+    relative_risk = comma(estimate1 / estimate2, 0.01),
     across(starts_with("estimate"), ~percent(.x, 0.01)),
     p_value_format = percent(p_value, 0.00001),
     interpret = case_when(
       p_value > (1 - confidence_level) ~ "Insufficient evidence of difference",
       TRUE ~ "Evidence of difference"
     ),
-    confidence_level = percent(confidence_level)
+    confidence_level = percent(confidence_level),
   ) |>
   glimpse() |>
   as.list()
